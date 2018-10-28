@@ -1,14 +1,19 @@
 <template>
   <div id="app">
+    <h1>Auth for Initiative</h1>
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/setup/campaigns">Select Campaign</router-link> |
+      <router-link to="/setup/participants">Add Participants</router-link> |
+      <router-link to="/Initiative">Combat Initiative</router-link>
     </div>
     <router-view/>
   </div>
 </template>
 
 <style lang="scss">
+@import '@/../../node_modules/bulma/bulma.sass';
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -27,3 +32,14 @@
   }
 }
 </style>
+
+<script>
+export default {
+  name: 'App',
+  beforeMount () {
+    // just in case we've visited before.
+    const token = localStorage.getItem('kankaToken')
+    if (token) this.$store.commit('setToken', token)
+  }
+}
+</script>

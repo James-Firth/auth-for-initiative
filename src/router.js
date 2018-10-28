@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import AuthPage from './views/Auth.vue'
+import Setup from './views/Setup.vue'
 
 Vue.use(Router)
 
@@ -10,16 +11,30 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      name: 'auth',
+      component: AuthPage
     },
     {
-      path: '/about',
-      name: 'about',
+      path: '/setup',
+      name: 'setup',
+      component: Setup,
+      children: [
+        { name: 'selectCampaign', path: 'campaigns', component: () => import('./components/SelectCampaign.vue') },
+        { name: 'selectParticipants', path: 'participants', component: () => import('./components/SelectParticipants.vue') }
+      ]
+    },
+    {
+      path: '/initiative',
+      name: 'initiative',
+      component: () => import('./views/Initiative.vue')
+    },
+    {
+      path: '/oauth/callback',
+      name: 'oauthCallback',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      component: () => import('./views/OauthCallback.vue')
     }
   ]
 })
