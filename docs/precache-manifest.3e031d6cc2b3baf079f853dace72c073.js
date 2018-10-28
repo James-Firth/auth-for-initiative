@@ -24,8 +24,8 @@ self.__precacheManifest = [
     "url": "/js/chunk-2d216b64.1d62c9ad.js"
   },
   {
-    "revision": "68f38141aeff69cb7785",
-    "url": "/js/app.7ea72350.js"
+    "revision": "606ec2de14479ddcec5a",
+    "url": "/js/app.e7171a41.js"
   },
   {
     "revision": "f1064774867849059a40",
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/js/chunk-vendors.34a7b366.js"
   },
   {
-    "revision": "5768bc38ea14d046091398787ecc99ce",
+    "revision": "c772a2d89f298b1a80efcad0a107635f",
     "url": "/index.html"
   },
   {
@@ -48,7 +48,7 @@ self.__precacheManifest = [
     "url": "/img/kanka_logo.png"
   },
   {
-    "revision": "68f38141aeff69cb7785",
+    "revision": "606ec2de14479ddcec5a",
     "url": "/css/app.a1a03e1d.css"
   }
 ];

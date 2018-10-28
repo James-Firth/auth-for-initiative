@@ -3,7 +3,7 @@
   .auth-wrapper
     p Before using this app, please authenticate with Kanka.io!
     br
-    button.button(@mousedown="kankaOauth")
+    button.button(disabled @mousedown="kankaOauth")
       span.icon.is-small
         img(src='/img/kanka_logo.png')
       span Authenticate via Kanka.io
