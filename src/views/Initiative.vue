@@ -26,7 +26,6 @@
   }
 </style>
 
-
 <script>
 import Combatant from '@/components/Combatant.vue'
 
