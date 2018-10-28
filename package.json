@@ -9,7 +9,12 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "buefy": "^0.7.0",
+    "bulma": "^0.7.2",
+    "bulma-divider": "^2.0.1",
+    "kanka": "git+ssh://git@github.com/James-Firth/kankajs.git#development",
     "register-service-worker": "^1.0.0",
+    "sortablejs": "^1.7.0",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
