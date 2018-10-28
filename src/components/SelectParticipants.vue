@@ -1,15 +1,16 @@
 <template lang="pug">
-  .wrapper
-    h1 Participants
-    b-loading(:is-full-page="false" :active.sync="showLoader")
-    router-link(to="/initiative")
-      button.button Done
-    b-table(
-      :data="availableParticipants"
-      :columns="columns"
-      @update:checkedRows="updateSelectedParticipants"
-      checkable
-    )
+  .columns
+    .column
+      b-loading(:is-full-page="false" :active.sync="showLoader")
+      .is-size-5 Select Participants for Combat
+      router-link(to="/initiative")
+        button.button Done selecting
+      b-table(
+        :data="availableParticipants"
+        :columns="columns"
+        @update:checkedRows="updateSelectedParticipants"
+        checkable
+      )
 
 </template>
 

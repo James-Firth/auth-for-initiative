@@ -1,5 +1,8 @@
 <template lang="html">
-  <div>
+  <div class="init-wrapper">
+    <p>
+      Highlighted Character is the current one in initiative, use the buttons below to move initiative along
+    </p>
     <button class="button" @mousedown="prevCombatant">Previous Combatant</button>
     <button class="button is-primary" @mousedown="nextCombatant">Move to next Combatnat</button>
     <ul class="flex" v-sortable="{ onEnd: reorder}">
@@ -12,14 +15,17 @@
 </template>
 
 <style lang="scss" scoped>
+  .init-wrapper {
+    padding: 1em;
+  }
   .flex {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: column;
   }
-  .li {
-    margin: 1em;
+  li {
+    margin: 0.3em;
   }
   img {
     overflow: hidden;
