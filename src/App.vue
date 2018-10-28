@@ -1,12 +1,6 @@
 <template>
   <div id="app">
-    <h1>Auth for Initiative</h1>
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/setup/campaigns">Select Campaign</router-link> |
-      <router-link to="/setup/participants">Add Participants</router-link> |
-      <router-link to="/Initiative">Combat Initiative</router-link>
-    </div>
+    <navbar/>
     <router-view/>
   </div>
 </template>
@@ -34,8 +28,11 @@
 </style>
 
 <script>
+import Navbar from '@/components/Navbar.vue'
+
 export default {
   name: 'App',
+  components: { Navbar },
   beforeMount () {
     // just in case we've visited before.
     const token = localStorage.getItem('kankaToken')
