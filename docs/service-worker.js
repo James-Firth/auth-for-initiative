@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.db27c1b03914c24844a1604e5d6638cd.js"
+  "/precache-manifest.7625420f620eb5f263882c187ab2e94e.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "auth-for-initiative"});
