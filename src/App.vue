@@ -36,7 +36,9 @@ export default {
   beforeMount () {
     // just in case we've visited before.
     const token = localStorage.getItem('kankaToken')
+    const devServer = (localStorage.getItem('devServer') === 'true')
     if (token) this.$store.commit('setToken', token)
+    this.$store.commit('useDevServer', devServer)
   }
 }
 </script>

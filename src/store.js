@@ -6,6 +6,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    devServer: false,
     kanka_token: '',
     campaign: null,
     all_campaigns: [],
@@ -13,10 +14,19 @@ export default new Vuex.Store({
     combatParticipants: []
   },
   mutations: {
+    useDevServer (state, useDev) {
+      state.devServer = useDev
+      window.localStorage.setItem('devServer', useDev)
+      if (useDev) {
+        kanka.useDevServer()
+      } else {
+        kanka.setDomains({})
+      }
+    },
     setToken (state, token) {
       state.kanka_token = token
       kanka.setToken(token)
-      localStorage.setItem('kankaToken', token)
+      window.localStorage.setItem('kankaToken', token)
     },
     setCampaigns (state, campaigns) {
       state.all_campaigns = campaigns
