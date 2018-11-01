@@ -7,13 +7,26 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     devServer: false,
-    kanka_token: '',
+    kankaToken: '',
     campaign: null,
     all_campaigns: [],
     all_characters: [],
-    combatParticipants: []
+    combatParticipants: [],
+    auth: {
+      accessToken: null,
+      tokenType: null,
+      expiresIn: null,
+      expiresAt: null
+    }
   },
   mutations: {
+    updateAuth (state, { access_token, token_type, expires_in }) {
+      state.auth.expiresAt = Date.now() + expires_in
+      state.auth.expiresIn = expires_in
+      state.auth.accessToken = access_token
+      state.auth.tokenType = token_type
+      kanka.setToken(access_token)
+    },
     useDevServer (state, useDev) {
       state.devServer = useDev
       window.localStorage.setItem('devServer', useDev)
@@ -24,7 +37,7 @@ export default new Vuex.Store({
       }
     },
     setToken (state, token) {
-      state.kanka_token = token
+      state.kankaToken = token
       kanka.setToken(token)
       window.localStorage.setItem('kankaToken', token)
     },
