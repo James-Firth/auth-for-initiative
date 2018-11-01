@@ -40,11 +40,11 @@ export default {
       rememberMe: false,
       // devServer: this.$store.state.devServer,
       baseUrl: 'https://kanka.io/oauth/authorize?',
-      clientId: 4,
-      clientSecret: '' || process.env.CLIENT_SECRET,
+      clientId: process.env.CLIENT_ID || 0,
+      clientSecret: process.env.CLIENT_SECRET || '',
       kanka_token: this.$store.state.kanka_token,
       redirectURI: process.env.REDIRECT_URI || 'http%3A%2F%2Flocalhost%3A8080%2Foauth%2Fcallback',
-      responseType: 'code'
+      responseType: 'token'
     }
   },
   computed: {
