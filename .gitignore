@@ -1,6 +1,6 @@
 .DS_Store
 node_modules
-# /dist # Because I don't have a good build system so I need to push this
+/dist
 
 # local env files
 .env.local
