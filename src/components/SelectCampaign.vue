@@ -35,7 +35,7 @@ export default {
     campaignList () { return this.$store.state.all_campaigns }
   },
   beforeMount () {
-    if (!this.$store.state.kanka_token) {
+    if (!this.$store.state.kankaToken) {
       this.$toast.open({
         message: 'Must be authenticated first!',
         type: 'is-warning'
